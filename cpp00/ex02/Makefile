@@ -1,10 +1,7 @@
-NAME =	phonebook
+NAME =	the_job_of_your_dreams
 
-SRC =			main.cpp \
-				input.cpp \
-				search.cpp \
-				Phonebook.cpp \
-				Contact.cpp
+SRC =			tests.cpp \
+				Account.cpp 
 				
 SRCS =			$(addprefix $(DIR_SRCS), $(SRC))
 
