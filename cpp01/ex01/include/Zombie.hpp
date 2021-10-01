@@ -6,12 +6,15 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 11:57:07 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 13:16:18 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/01 16:40:27 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string.h>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+
+# include <iostream>
+# include <string.h>
 
 class Zombie 
 {
@@ -30,3 +33,5 @@ class Zombie
 };
 
 Zombie* zombieHorde(int N, std::string name);
+
+#endif
