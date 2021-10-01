@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/25 12:13:43 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 11:14:33 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/01 13:03:31 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/01 13:26:25 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string.h>
-# include <iomanip>
-
-class Contact
+Zombie* zombieHorde(int N, std::string name)
 {
+	Zombie*	ZombieHorde;
+	int		i;
 
-public:
-	int	index;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string	phone_nbr;
-	std::string	secret;
-
-	Contact(void);
-	~Contact(void);
-};
-
-
-#endif
+	if (N < 1)
+		return (NULL);
+	ZombieHorde = new Zombie[N];
+	i = -1;
+	while (++i < N)
+	{
+		ZombieHorde[i].setName(name);
+	}
+	return (ZombieHorde);
+}

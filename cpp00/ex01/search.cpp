@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 15:38:03 by bditte            #+#    #+#             */
-/*   Updated: 2021/09/27 20:58:06 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/01 11:19:58 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,17 @@ void	add_spaces(int nb)
 
 void	display_contact(Contact contact)
 {
-	std::cout << contact.index;
-	add_spaces(9);
+	std::cout << std::setw(10) << contact.index << "|";
 	if (contact.first_name.length() < 10)
-	{
-		std::cout << contact.first_name;
-		add_spaces(10 - contact.first_name.length());
-	}
+		std::cout << std::setw(10) << contact.first_name << "|";
 	else
 		display_string(contact.first_name);
 	if (contact.last_name.length() < 10)
-	{
-		std::cout << contact.last_name;
-		add_spaces(10 - contact.last_name.length());
-	}
+		std::cout << std::setw(10) << contact.last_name << "|";
 	else
 		display_string(contact.last_name);
 	if (contact.nickname.length() < 10)
-	{
-		std::cout << contact.nickname;
-		add_spaces(10 - contact.nickname.length());
-	}
+		std::cout << std::setw(10) << contact.nickname << "|";
 	else
 		display_string(contact.nickname);
 	std::cout << std::endl;

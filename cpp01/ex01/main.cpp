@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/25 12:13:43 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 11:14:33 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/01 13:12:52 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/01 13:31:44 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string.h>
-# include <iomanip>
-
-class Contact
+int main(void)
 {
+	Zombie Zomb("firstZombie");
+	Zombie	*Horde;
+	int		i;
 
-public:
-	int	index;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string	phone_nbr;
-	std::string	secret;
+	Horde = zombieHorde(20, "Zomblard");
 
-	Contact(void);
-	~Contact(void);
-};
-
-
-#endif
+	i = -1;
+	while (++i < 20)
+	{
+		Horde[i].announce();
+	}
+	delete [] Horde;
+	return (0);
+}

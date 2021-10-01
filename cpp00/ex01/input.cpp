@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:20:32 by bditte            #+#    #+#             */
-/*   Updated: 2021/09/27 21:13:29 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/01 12:45:06 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ int	ft_add(Phonebook *phonebook)
 
 	i = phonebook->nb_contacts;
 	std::cout << "First name : ";
-	std::getline(std::cin, phonebook->contacts[i].first_name);
-	std::cout << phonebook->contacts[i].first_name << std::endl;
-/*	std::cout << "Last name : ";
-	std::getline(std::cin, phonebook->contacts[i].last_name);
+	std::cin >> phonebook->contacts[i].first_name;
+	std::cout << "Last name : ";
+	std::cin >> phonebook->contacts[i].last_name;
 	std::cout << "Nickname : ";
-	std::getline(std::cin, phonebook->contacts[i].nickname);
+	std::cin >> phonebook->contacts[i].nickname;
 	std::cout << "Phone number : ";
 	std::cin >> phonebook->contacts[i].phone_nbr;
 	std::cout << "Secret : ";
-	std::getline(std::cin, phonebook->contacts[i].secret);*/
+	std::cin >> phonebook->contacts[i].secret;
 	phonebook->contacts[i].index = i;
 	phonebook->nb_contacts++;
 	return (0);

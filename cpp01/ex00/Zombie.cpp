@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/25 12:13:43 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 11:14:33 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/01 12:30:25 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/01 12:46:34 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string.h>
-# include <iomanip>
-
-class Contact
+Zombie::Zombie (void) : _name("default")
 {
+	return ;
+}
 
-public:
-	int	index;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string	phone_nbr;
-	std::string	secret;
+Zombie::Zombie (std::string name) : _name(name)
+{
+	return ;
+}
 
-	Contact(void);
-	~Contact(void);
-};
+Zombie::~Zombie (void)
+{
+	std::cout << this->_name << " died...we'll miss him." << std::endl;
+	return ;
+}
 
-
-#endif
+void Zombie::announce (void)
+{
+	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}

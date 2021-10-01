@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/25 12:13:43 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 11:14:33 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/01 12:34:52 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/01 12:56:42 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string.h>
-# include <iomanip>
-
-class Contact
+int	check_stack_zombie(Zombie zombie)
 {
+	zombie.announce();
+	return (0);
+}
 
-public:
-	int	index;
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string	phone_nbr;
-	std::string	secret;
+int	check_heap_zombie(Zombie *zombie)
+{
+	zombie->announce();
+	return (0);
+}
 
-	Contact(void);
-	~Contact(void);
-};
+int main(void)
+{
+	Zombie	firstZomb = randomChump("Chump");
+	Zombie	*zombptr = newZombie("Richto");
 
-
-#endif
+	check_stack_zombie(firstZomb);
+	check_heap_zombie(zombptr);
+	delete zombptr;
+	return (0);
+}
