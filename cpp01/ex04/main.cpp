@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/01 15:44:41 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/04 11:23:54 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/04 11:26:32 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/04 13:55:07 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "replace.h"
 
-void HumanB::attack(void)	const
+int main(int argc, char **argv)
 {
-	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
-}
+	std::string	filename;
 
-void HumanB::setWeapon(Weapon& weapon)
-{
-	this->_weapon = &weapon;
-}
-
-HumanB::HumanB (std::string Name) : _name(Name), _weapon(NULL)
-{
-	return ;
-}
-
-HumanB::~HumanB (void)
-{
-	return ;
+	if (check_args(argc, argv))
+		return (1);
+	filename = argv[1];
+	if (ft_replace(filename, argv[2], argv[3]))
+		return (1);
+	return (0);
 }

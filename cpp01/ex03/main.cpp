@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:38:25 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 16:51:36 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/04 11:22:46 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 int main(void)
 {
-	Weapon	kalash("AK-47");
-	Weapon	rpg("AK-47");
-	HumanA	stan("Stan", kalash);
-	HumanB	brad("Brad");
+	Weapon	WeaponA("crude spiked club");
+	Weapon	WeaponB("crude spiked club");
+	HumanA	Bob("Bob", WeaponA);
+	HumanB	Jim("Jim");
 
-	stan.attack();
-	brad.setWeapon(rpg);
-	brad.attack();
-	kalash.setType("RPG");
-	rpg.setType("RPG");
-	brad.attack();
-	stan.attack();
-	std::cout << kalash.getType() << std::endl;
-	std::cout << kalash.getType() << std::endl;
+	Jim.setWeapon(WeaponB);
+	Bob.attack();
+	Jim.attack();
+	std::cout << "- - - Changing Weapons - - -" << std::endl;
+
+	WeaponA.setType("some other type of club");
+	WeaponB.setType("some other type of club");
+	Bob.attack();
+	Jim.attack();
 	return (0);
 }

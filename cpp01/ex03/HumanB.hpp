@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:44:45 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 17:45:45 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/04 11:23:56 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanB
 	public:
 
 	void	attack(void) const;
-	void	setWeapon(Weapon weapon);
+	void	setWeapon(Weapon& weapon);
 
 	HumanB(std::string Name);
 	~HumanB(void);

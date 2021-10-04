@@ -1,9 +1,8 @@
-NAME =	unnecessary_violence
+NAME =	replace
 
 SRC =			main.cpp \
-				HumanA.cpp \
-				HumanB.cpp \
-				Weapon.cpp
+				ft_replace.cpp \
+				error.cpp 
 
 SRCS =			$(addprefix $(DIR_SRCS), $(SRC))
 
