@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.h                                          :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:27:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/04 14:52:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/04 14:54:33 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/04 15:35:09 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_H
-# define REPLACE_H
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-#include <iostream>
-#include <string.h>
-#include <fstream>
-#include <istream>
+# include <iostream>
+# include <string.h>
 
-int	check_args(int argc, char **argv);
-int	ft_putstr(const char *str);
-int	ft_replace(std::string filename, const char *s1, const char *s2);
+class Karen
+{
+	public:
+
+	Karen(void);
+	~Karen(void);
+
+	void	complain(std::string level);
+	private:
+
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+};
+
 #endif
