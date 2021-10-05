@@ -26,6 +26,8 @@ class Karen
 	void	complain(std::string level);
 	private:
 
+	void	(Karen::fptr[5])(void);
+
 	void	debug(void);
 	void	info(void);
 	void	warning(void);

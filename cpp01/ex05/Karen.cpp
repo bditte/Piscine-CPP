@@ -14,6 +14,11 @@
 
 Karen::Karen	(void)
 {
+	this->fptr[0] = Karen::debug;
+	this->fptr[1] = Karen::info;
+	this->fptr[2] = Karen::warning;
+	this->fptr[3] = Karen::error;
+	this->fptr[4] = NULL;
 	return ;
 }
 
@@ -24,17 +29,10 @@ Karen::~Karen	(void)
 
 void	Karen::complain(std::string	level)
 {
-	void (Karen::*functptr[5])() = {
-		&Karen::debug,
-		&Karen::info,
-		&Karen::warning,
-		&Karen::error,
-		NULL
-	};
 	const char *levels[4] = {
 		"DEBUG",
 		"INFO",
-		"WARNING",
+		"WARNINGt",
 		"ERROR",
 	};
 
@@ -45,7 +43,7 @@ void	Karen::complain(std::string	level)
 		level_id++;
 	if (levels[level_id])
 	{
-		*functptr[level_id]();
+		this->fptr[level_id](void);
 		return ;
 	}
 	std::cout << "Unknown level" << std::endl;
