@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 09:38:41 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/12 16:15:20 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/14 10:01:25 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/14 10:02:54 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Point.hpp"
 
-#include <iostream>
-
-class Fixed
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
-
-	public:
-
-	Fixed(void);
-	Fixed(const Fixed& src);
-	~Fixed(void);
-
-	int	getRawBits(void) const;
-	void	setRawBits(int const raw);
-
-	Fixed&	operator=(Fixed& rhs);
-	private:
-
-	const int	_width;
-	int			_value
-	;
-};
-
-
-
-#endif
+	
+}

@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 19:14:04 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/13 19:24:56 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/14 10:04:03 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Point
 		
 	Point();
 	Point(Point& src);
-	Point(Fixed x, Fixed y);
+	Point(Fixed const x, Fixed const y);
 	~Point();
 
 	Point& operator=(Point rhs);
