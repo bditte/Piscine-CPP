@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 10:56:31 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/18 11:53:13 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Animal
 
 	Animal();
 	Animal(std::string const& type);
+	Animal(Animal const& src);
 	virtual ~Animal();
 
 	Animal& operator=(Animal const& rhs);

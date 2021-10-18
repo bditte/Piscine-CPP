@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 12:03:05 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 13:08:19 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Cure.hpp"
 
-# include <iostream>
-# include <string.h>
-
-class Animal
+AMateria* Cure::clone() const
 {
-	public:
+	AMateria *tmp = new Cure(*this);
+	return (tmp);
+}
 
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
+Cure::Cure(): AMateria("cure")
+{
+	return ;
+}
 
-	Animal& operator=(Animal& rhs);
+Cure::Cure(Cure const& src): AMateria(src.getType())
+{
+	return ;
+}
 
-	std::string		getType();
-	void virtual 	makeSound();
+Cure::~Cure()
+{
+	return ;
+}
 
-	protected:
-
-	std::string _type;
-};
-
-#endif
+Cure& Cure::operator=(Cure const& rhs)
+{
+	(void)rhs;
+	return (*this);
+}

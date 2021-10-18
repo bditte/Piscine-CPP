@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 12:27:11 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 13:14:00 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Ice.hpp"
 
-# include <iostream>
-# include <string.h>
-
-class Animal
+AMateria* Ice::clone() const
 {
-	public:
+	AMateria *tmp = new Ice(*this);
+	return (tmp);
+}
 
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
+Ice::Ice(): AMateria("ice")
+{
+	printf("Ice constructor\n");
+	return ;
+}
 
-	Animal& operator=(Animal& rhs);
+Ice::Ice(Ice const& src): AMateria(src.getType())
+{
+	printf("Ice cpy constructor\n");
+	return ;
+}
 
-	std::string		getType();
-	void virtual 	makeSound();
+Ice::~Ice()
+{
+	printf("Ice destructor\n");
+	return ;
+}
 
-	protected:
-
-	std::string _type;
-};
-
-#endif
+Ice& Ice::operator=(Ice const& rhs)
+{
+	(void)rhs;
+	return (*this);
+}

@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/18 11:51:11 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Animal
 	Animal(Animal const& src);
 	virtual ~Animal();
 
-	Animal& operator=(Animal& rhs);
+	Animal& operator=(Animal const& rhs);
 
 	std::string		getType();
-	void virtual 	makeSound();
+	void virtual 	makeSound() = 0;
 
 	protected:
 

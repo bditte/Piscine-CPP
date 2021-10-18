@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 09:49:38 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 11:11:14 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Brain.hpp"
 
-# include <iostream>
-# include <string.h>
-
-class Animal
+Brain::Brain()
 {
-	public:
+	std::cout << "Brain default constructor called" << std::endl;
+	return ;
+}
 
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
+Brain::Brain(Brain const& src)
+{
+	*this = src;
+	std::cout << "Brain copy constructor called" << std::endl;
+}
 
-	Animal& operator=(Animal& rhs);
+Brain::~Brain()
+{
+	std::cout << "Brain destructor called" << std::endl;
+	return ;
+}
 
-	std::string		getType();
-	void virtual 	makeSound();
-
-	protected:
-
-	std::string _type;
-};
-
-#endif
+Brain& Brain::operator=(Brain const& rhs)
+{
+	*this->ideas = *rhs.ideas;
+	return (*this);
+}

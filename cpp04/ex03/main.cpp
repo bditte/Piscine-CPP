@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 12:05:40 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 13:15:29 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-# include <iostream>
-# include <string.h>
-
-class Animal
+int	main(void)
 {
-	public:
+	AMateria *ice = new Ice();
+	AMateria *cure = new Cure();
+	printf("Cure constructor\n");
+	AMateria *ice_cpy = ice->clone();
 
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
-
-	Animal& operator=(Animal& rhs);
-
-	std::string		getType();
-	void virtual 	makeSound();
-
-	protected:
-
-	std::string _type;
-};
-
-#endif
+	delete ice_cpy;
+	delete ice;
+	delete cure;
+}

@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 12:07:56 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 13:10:01 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include <iostream>
-# include <string.h>
+# include "AMateria.hpp"
 
-class Animal
+class Cure: public AMateria
 {
 	public:
 
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
+	Cure();
+	Cure(Cure const& src);
+	~Cure();
 
-	Animal& operator=(Animal& rhs);
+	virtual AMateria* clone() const;
 
-	std::string		getType();
-	void virtual 	makeSound();
-
-	protected:
-
-	std::string _type;
+	Cure& operator=(Cure const& rhs);
 };
 
 #endif

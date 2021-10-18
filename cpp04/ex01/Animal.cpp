@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 14:49:18 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:04:53 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/18 11:52:34 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 Animal::Animal(): _type("default_animal")
 {
 	std::cout << "Animal default constructor called" << std::endl;
+	return ;
+}
+
+Animal::Animal(Animal const& src): _type(src._type)
+{
+	std::cout << "Animal copy constructor called" << std::endl;
 	return ;
 }
 

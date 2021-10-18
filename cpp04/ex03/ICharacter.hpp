@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 12:49:11 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 12:55:36 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
-# include <iostream>
-# include <string.h>
+# include "AMateria.hpp"
 
-class Animal
+class ICharacter
 {
 	public:
-
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
-
-	Animal& operator=(Animal& rhs);
-
-	std::string		getType();
-	void virtual 	makeSound();
-
-	protected:
-
-	std::string _type;
+	
+	virtual ~ICharacter() {}
+	virtual	std::string const& getName() const = 0;
+	virtual	void equip(AMateria* m) = 0;
+	virtual	void unequip(int idx) = 0;
+	virtual void use(int idxm, ICharacter &target) = 0;
 };
 
 #endif

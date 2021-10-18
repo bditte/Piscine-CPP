@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 14:49:18 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:20 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/18 11:52:10 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,10 @@ void	Animal::makeSound()
 std::string Animal::getType()
 {
 	return (this->_type);
+}
+
+Animal& Animal::operator=(Animal const& rhs)
+{
+	this->_type = rhs._type;
+	return (*this);
 }

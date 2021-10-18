@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 14:49:02 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:52:52 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 13:11:22 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 13:25:49 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-# include <iostream>
-# include <string.h>
+# include "ICharacter.hpp"
 
-class Animal
+class Character: public ICharacter
 {
 	public:
 
-	Animal();
-	Animal(std::string const& type);
-	Animal(Animal const& src);
-	virtual ~Animal();
+	Character();
+	Character(Character const& src);
+	~Character();
 
-	Animal& operator=(Animal& rhs);
+	virtual	std::string const& getName();
+	virtual	void equip(AMateria* m);
+	virtual	void unequip(int idx);
+	virtual void use(int idxm, ICharacter &target);
 
-	std::string		getType();
-	void virtual 	makeSound();
+	Character& operator=(Character const& rhs);
 
 	protected:
 
-	std::string _type;
+	AMateria	inventory[4];
 };
 
 #endif
