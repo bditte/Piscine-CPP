@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 15:31:16 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/16 15:34:16 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/18 09:43:30 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	main(void)
 	WrongAnimal	*d = new WrongCat();
 	std::cout << std::endl << "---- END OF CONSTRUCTORS ----" <<std::endl<<std::endl;
 
-	std::cout << "Type " << a->getType() << " sound : ";
+	std::cout << "Type : " << a->getType() << " sound : ";
 	a->makeSound();
-	std::cout << "Type " << b->getType() << " sound : ";
+	std::cout << "Type : " << b->getType() << " sound : ";
 	b->makeSound();
-	std::cout << "Type " << c->getType() << " sound : ";
+	std::cout << "Type : " << c->getType() << " sound : ";
 	c->makeSound();
-	std::cout << "Type " << d->getType() << " sound : ";
+	std::cout << "Type : " << d->getType() << " sound : ";
 	d->makeSound();
 
 	std::cout << std::endl << std::endl << "---- BEGINNING OF DESTRUCTORS ----" <<std::endl;
