@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:33 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 09:40:46 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 11:58:49 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/20 11:37:29 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
 # include <string.h>
 
-class Karen
+class ICharacter;
+
+class AMateria
 {
 	public:
 
-	Karen(void);
-	~Karen(void);
+	AMateria();
+	AMateria(std::string const& type);
+	AMateria(AMateria const& src);
+	virtual ~AMateria();
 
-	void	complain(std::string level);
-	private:
+	std::string const& getType() const;
 
-	void	(Karen::*f[5])(void);
+	virtual AMateria* clone() const = 0;
+	virtual void	  use(ICharacter& target);
 
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
+	AMateria& operator=(AMateria const& rhs);
+
+	protected:
+
+	std::string const	type;
+
 };
-
 #endif

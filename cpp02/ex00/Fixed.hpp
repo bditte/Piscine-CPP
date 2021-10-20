@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/12 09:38:41 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/13 12:45:00 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int	main(void)
+#include <iostream>
+
+class Fixed
 {
-	std::string	input;
-	Karen	RealKaren;
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
-	return (0);
-}
+	public:
+
+	Fixed(void);
+	Fixed(const Fixed& src);
+	~Fixed(void);
+
+	int	getRawBits(void) const;
+	void	setRawBits(int const raw);
+
+	Fixed&	operator=(Fixed& rhs);
+	private:
+
+	const int	_nbBits;
+	int			_value
+	;
+};
+
+
+
+#endif

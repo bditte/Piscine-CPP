@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:33 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 09:40:46 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/15 15:02:14 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/15 16:37:00 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-# include <iostream>
 # include <string.h>
+# include <iostream>
 
-class Karen
+class ClapTrap
 {
 	public:
 
-	Karen(void);
-	~Karen(void);
+	ClapTrap();
+	ClapTrap(std::string name);
+	~ClapTrap();
 
-	void	complain(std::string level);
-	private:
+	ClapTrap& operator=(ClapTrap const &rhs);
 
-	void	(Karen::*f[5])(void);
+	void	attack(std::string const& target);
+	void	takeDamage(unsigned int amount);
+	void	berepaired(unsigned int amount);
 
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
+	protected:
+
+	std::string			_name;
+	unsigned int 		_hitPoints;
+	unsigned int 		_energyPoints;
+	unsigned int 		_attackDamage;
+
 };
 
 #endif

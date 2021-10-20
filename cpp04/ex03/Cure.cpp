@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 12:03:05 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 13:08:19 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Cure.hpp"
 
-int	main(void)
+AMateria* Cure::clone() const
 {
-	std::string	input;
-	Karen	RealKaren;
+	AMateria *tmp = new Cure(*this);
+	return (tmp);
+}
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
-	return (0);
+Cure::Cure(): AMateria("cure")
+{
+	return ;
+}
+
+Cure::Cure(Cure const& src): AMateria(src.getType())
+{
+	return ;
+}
+
+Cure::~Cure()
+{
+	return ;
+}
+
+Cure& Cure::operator=(Cure const& rhs)
+{
+	(void)rhs;
+	return (*this);
 }

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 09:49:17 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 10:23:07 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int	main(void)
+# include <iostream>
+# include <string.h>
+
+class Brain
 {
-	std::string	input;
-	Karen	RealKaren;
+	public:
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
-	return (0);
-}
+	Brain();
+	Brain(Brain const& src);
+	~Brain();
+
+	Brain& operator=(Brain const& rhs);
+
+	protected:
+
+	std::string ideas[100];
+};
+
+#endif

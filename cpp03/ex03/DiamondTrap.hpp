@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/16 11:34:20 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/16 13:09:26 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int	main(void)
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	std::string	input;
-	Karen	RealKaren;
+	public:
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
-	return (0);
-}
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	~DiamondTrap();
+
+	DiamondTrap& operator=(DiamondTrap &rhs);
+
+	void	whoAmI();
+	private:
+
+	std::string 	_name;
+};
+#endif

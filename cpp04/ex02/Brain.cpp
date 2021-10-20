@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/18 09:49:38 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 11:11:14 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Brain.hpp"
 
-int	main(void)
+Brain::Brain()
 {
-	std::string	input;
-	Karen	RealKaren;
+	std::cout << "Brain default constructor called" << std::endl;
+	return ;
+}
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
-	return (0);
+Brain::Brain(Brain const& src)
+{
+	*this = src;
+	std::cout << "Brain copy constructor called" << std::endl;
+}
+
+Brain::~Brain()
+{
+	std::cout << "Brain destructor called" << std::endl;
+	return ;
+}
+
+Brain& Brain::operator=(Brain const& rhs)
+{
+	*this->ideas = *rhs.ideas;
+	return (*this);
 }

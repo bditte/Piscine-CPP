@@ -5,25 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/15 15:31:16 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/18 11:50:35 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int	main(void)
 {
-	std::string	input;
-	Karen	RealKaren;
+	Animal	*a = new Cat();
+	Animal	*b = new Dog();
+	//Animal	*c = new Animal();
+	std::cout << std::endl << "---- END OF CONSTRUCTORS ----" <<std::endl<<std::endl;
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
+	std::cout << "Type : " << a->getType() << " sound : ";
+	a->makeSound();
+	std::cout << "Type : " << b->getType() << " sound : ";
+	b->makeSound();
+
+	std::cout << std::endl << std::endl << "---- BEGINNING OF DESTRUCTORS ----" <<std::endl;
+	delete a;
+	delete b;
+	return (0);
 	return (0);
 }

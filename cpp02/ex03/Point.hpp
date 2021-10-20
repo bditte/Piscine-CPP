@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/13 19:14:04 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/14 10:04:03 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef POINT_HPP
+# define POINT_HPP
 
-int	main(void)
+# include "Fixed.hpp"
+
+class Point
 {
-	std::string	input;
-	Karen	RealKaren;
+	public:
+		
+	Point();
+	Point(Point& src);
+	Point(Fixed const x, Fixed const y);
+	~Point();
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
-	return (0);
-}
+	Point& operator=(Point rhs);
+	private:
+
+	Fixed const x;
+	Fixed const y;
+
+};
+
+
+
+#endif

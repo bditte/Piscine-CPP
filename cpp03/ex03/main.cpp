@@ -5,25 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:54:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:38:58 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/15 15:31:16 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/16 13:10:00 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	std::string	input;
-	Karen	RealKaren;
+	DiamondTrap first("Diamond");
+	FragTrap	second("Frag");
+	std::cout << std::endl << "---- END OF CONSTRUCTORS ----" <<std::endl<<std::endl;
 
-	std::cout << "Enter a level : " << std::endl;
-	std::cin >>	input;
-	while (input[0])
-	{	
-		RealKaren.complain(input);
-		std::cout << "Enter a level : " << std::endl;
-		std::cin >>	input;
-	}
+	first.whoAmI();
+	first.highFivesGuys();
+	first.guardGate();
+	first.attack("Frag");
+	second.takeDamage(30);
+	second.berepaired(10);
+	second.attack("Diamond");
+	first.takeDamage(30);
+
+	std::cout << std::endl << std::endl << "---- BEGINNING OF DESTRUCTORS ----" <<std::endl;
 	return (0);
 }
