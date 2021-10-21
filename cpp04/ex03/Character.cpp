@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 10:27:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/20 17:07:31 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/21 15:19:28 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void Character::unequip(int idx)
     for (int i = idx; i < 3; i++)
 	{
 		this->inventory[i] = this->inventory[i + 1];
-        this->inventory[i] = NULL;    
+        this->inventory[i + 1] = NULL;    
     }
 	this->curr_mat--;
     return ;
@@ -81,7 +81,8 @@ Character::~Character()
 
 	while (++i < this->curr_mat)
 	{
-		delete this->inventory[i];
+		if (this->inventory[i] != NULL)
+			delete this->inventory[i];
 	}
     return ;
 }
