@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 13:11:22 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/20 11:42:19 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/20 16:51:59 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Character: public ICharacter
 	protected:
 
 	std::string	name;
+	int			curr_mat;
 	AMateria* inventory[4];
 };
 

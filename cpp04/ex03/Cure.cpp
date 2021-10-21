@@ -6,11 +6,17 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 12:03:05 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 13:08:19 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/20 16:15:11 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
+#include "ICharacter.hpp"
+
+void	Cure::use(ICharacter &target)
+{
+	std::cout<< "* heals " << target.getName() << "'s wounds *"<< std::endl;
+}
 
 AMateria* Cure::clone() const
 {

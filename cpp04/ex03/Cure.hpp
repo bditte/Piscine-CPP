@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 12:07:56 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 13:10:01 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/20 16:14:05 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cure: public AMateria
 	~Cure();
 
 	virtual AMateria* clone() const;
-
+	virtual void	  use(ICharacter& target);
 	Cure& operator=(Cure const& rhs);
 };
 
