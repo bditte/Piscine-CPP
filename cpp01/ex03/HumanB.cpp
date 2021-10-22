@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:44:41 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/04 11:23:54 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 15:23:11 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void HumanB::attack(void)	const
 {
+	if (!this->_weapon)
+	{
+		std::cout << this->_name << " can't attack because he is unarmed" << std::endl;
+		return ;
+	}
 	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
 }
 

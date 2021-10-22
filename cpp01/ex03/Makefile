@@ -1,4 +1,4 @@
-NAME =	unnecessary_violence
+NAME =	a.out
 
 SRC =			main.cpp \
 				HumanA.cpp \
