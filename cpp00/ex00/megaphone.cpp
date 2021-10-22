@@ -1,6 +1,6 @@
 #include <iostream>
 
-char	*ft_toupper(char *str)
+std::string ft_toupper(std::string str)
 {
 	int	i;
 

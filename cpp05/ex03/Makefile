@@ -1,9 +1,11 @@
 NAME =	a.out
 
 SRC =			main.cpp \
-				Zombie.cpp \
-				newZombie.cpp \
-				randomChump.cpp
+				Bureaucrat.cpp \
+				Form.cpp \
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp
 
 SRCS =			$(addprefix $(DIR_SRCS), $(SRC))
 

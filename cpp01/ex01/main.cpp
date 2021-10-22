@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 13:12:52 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 13:31:44 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 15:00:19 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int main(void)
 	Zombie	*Horde;
 	int		i;
 
-	Horde = zombieHorde(20, "Zomblard");
+	Zomb.announce();
+	Horde = zombieHorde(20, "ZombieOfTheHorde");
 
 	i = -1;
 	while (++i < 20)

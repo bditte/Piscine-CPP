@@ -1,4 +1,4 @@
-NAME =	replace
+NAME =	a.out
 
 SRC =			main.cpp \
 				ft_replace.cpp \

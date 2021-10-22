@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 11:57:07 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 16:40:02 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 14:53:43 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ class Zombie
 };
 
 Zombie* newZombie (std::string name);
-Zombie	randomChump(std::string name);
+void	randomChump(std::string name);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:38:25 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/04 11:22:46 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 15:24:13 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,20 @@
 
 int main(void)
 {
-	Weapon	WeaponA("crude spiked club");
-	Weapon	WeaponB("crude spiked club");
-	HumanA	Bob("Bob", WeaponA);
-	HumanB	Jim("Jim");
-
-	Jim.setWeapon(WeaponB);
-	Bob.attack();
-	Jim.attack();
-	std::cout << "- - - Changing Weapons - - -" << std::endl;
-
-	WeaponA.setType("some other type of club");
-	WeaponB.setType("some other type of club");
-	Bob.attack();
-	Jim.attack();
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return (0);
 }

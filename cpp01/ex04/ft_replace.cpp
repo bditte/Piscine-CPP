@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:01:30 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/04 14:16:25 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 15:31:14 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_replace(std::string file_name, const char *s1, const char *s2)
 	std::string		line;
 
 	infile.open(file_name.c_str());
-	outfile.open(file_name + ".replace");
+	outfile.open(file_name.append(".replace").c_str());
 	if (outfile.fail())
 		return (ft_putstr("Error: Couldn't create file."));
 	std::getline(infile, line);
