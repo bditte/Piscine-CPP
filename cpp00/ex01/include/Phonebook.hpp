@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 12:10:55 by bditte            #+#    #+#             */
-/*   Updated: 2021/09/27 15:40:13 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/23 11:44:24 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,16 @@
 class Phonebook
 {
 
-public:
+	public:
+
 	Phonebook(void);
 	~Phonebook(void);
+
+	int			getNbContacts() const;
+	Contact&	getContact(int const index);
+	void		setNbContacts(int const i);
+
+	private:
 
 	Contact	contacts[8];
 	int		nb_contacts;

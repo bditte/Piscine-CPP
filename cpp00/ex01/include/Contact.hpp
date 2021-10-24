@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 12:13:43 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 11:14:33 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/23 11:34:32 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,30 @@
 class Contact
 {
 
-public:
+	public:
+	
+	Contact(void);
+	~Contact(void);
+
+	int			getIndex() const;
+	std::string	getFirstName() const;
+	std::string	getLastName() const;
+	std::string	getNickname() const;
+	std::string	getPhoneNumber() const;
+	std::string	getSecret() const;
+
+	void		setIndex(int const index);
+	void		setFirstName(std::string const name);
+	void		setLastName(std::string const name);
+	void		setNickname(std::string const name);
+	void		setPhoneNumber(std::string const phoneNbr);
+	void		setSecret(std::string const secret);
+
+	void		display_full() const;
+	void		display() const;
+
+	private:
+
 	int	index;
 	std::string first_name;
 	std::string last_name;
@@ -28,8 +51,6 @@ public:
 	std::string	phone_nbr;
 	std::string	secret;
 
-	Contact(void);
-	~Contact(void);
 };
 
 

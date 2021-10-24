@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:20:32 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 12:45:06 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/23 11:40:34 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 
 int	ft_add(Phonebook *phonebook)
 {
-	int i;
+	int 		i;
+	std::string	tmp;
 
-	i = phonebook->nb_contacts;
+	i = phonebook->getNbContacts();
 	std::cout << "First name : ";
-	std::cin >> phonebook->contacts[i].first_name;
+	std::cin >> tmp;
+	phonebook->getContact(i).setFirstName(tmp);
 	std::cout << "Last name : ";
-	std::cin >> phonebook->contacts[i].last_name;
+	std::cin >> tmp;
+	phonebook->getContact(i).setLastName(tmp);
 	std::cout << "Nickname : ";
-	std::cin >> phonebook->contacts[i].nickname;
+	std::cin >> tmp;
+	phonebook->getContact(i).setNickname(tmp);
 	std::cout << "Phone number : ";
-	std::cin >> phonebook->contacts[i].phone_nbr;
+	std::cin >> tmp;
+	phonebook->getContact(i).setPhoneNumber(tmp);
 	std::cout << "Secret : ";
-	std::cin >> phonebook->contacts[i].secret;
-	phonebook->contacts[i].index = i;
-	phonebook->nb_contacts++;
+	std::cin >> tmp;
+	phonebook->getContact(i).setSecret(tmp);
+	phonebook->getContact(i).setIndex(i);
+	phonebook->setNbContacts(i + 1);
 	return (0);
 }
 
