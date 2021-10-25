@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 14:55:00 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:29:59 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 23:00:34 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ Karen::~Karen	(void)
 
 void	Karen::complain(std::string	level)
 {
-	const char *levels[4] = {
+	const char *levels[5] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
 		"ERROR",
+		NULL
 	};
 
 	int	level_id;
