@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:44:45 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 16:46:38 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:37:16 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class HumanA
 
 	HumanA(std::string Name, Weapon& Weapon);
 	~HumanA(void);
+
+	std::string	getName() const;
 
 	private:
 

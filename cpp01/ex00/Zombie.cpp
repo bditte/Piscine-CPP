@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 12:30:25 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/01 12:46:34 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:26:04 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,16 @@ Zombie::Zombie (std::string name) : _name(name)
 
 Zombie::~Zombie (void)
 {
-	std::cout << this->_name << " died...we'll miss him." << std::endl;
+	std::cout << this->getName()<< " died...we'll miss him." << std::endl;
 	return ;
 }
 
 void Zombie::announce (void)
 {
-	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->getName() << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+std::string Zombie::getName() const
+{
+	return (this->_name);
 }

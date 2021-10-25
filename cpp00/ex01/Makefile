@@ -1,8 +1,6 @@
 NAME =	phonebook
 
 SRC =			main.cpp \
-				input.cpp \
-				search.cpp \
 				Phonebook.cpp \
 				Contact.cpp
 				

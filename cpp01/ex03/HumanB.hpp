@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 15:44:45 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/04 11:23:56 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:38:38 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class HumanB
 
 	HumanB(std::string Name);
 	~HumanB(void);
+
+	std::string getName() const;
 
 	private:
 

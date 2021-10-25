@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 11:57:07 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/22 14:53:43 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:25:09 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Zombie
 	Zombie (void);
 	Zombie (std::string name);
 	~Zombie (void);
+
+	std::string getName() const;
 
 	private:
 

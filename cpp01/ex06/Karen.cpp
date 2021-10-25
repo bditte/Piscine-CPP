@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 14:55:00 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 11:32:31 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:48:59 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,7 @@ void	Karen::complain(std::string	level)
 			std::cout << std::endl;
 		}
 		break;
-	}/*
-	if (level_id < 4)
-	{
-		(this->*(f[level_id]))();
-		return ;
-	}*/
+	}
 }
 
 void	Karen::debug(void)

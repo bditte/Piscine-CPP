@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 14:54:33 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/05 09:40:46 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/25 15:45:04 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Karen
 	~Karen(void);
 
 	void	complain(std::string level);
+	
 	private:
 
 	void	(Karen::*f[5])(void);
