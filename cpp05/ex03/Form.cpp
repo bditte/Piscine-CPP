@@ -75,12 +75,12 @@ std::ostream& operator<<(std::ostream& o, Form const& rhs)
 Form::Form(std::string const name, int signGrade, int execGrade): name(name), signGrade(signGrade), execGrade(execGrade)
 {
 	this->is_signed = false;
-    if (signGrade < 1)
-        throw Form::GradeTooHighException();
-    if (signGrade > 150)
-        throw Form::GradeTooLowException();
+	if (signGrade < 1)
+		throw Form::GradeTooHighException();
+	if (signGrade > 150)
+		throw Form::GradeTooLowException();
 	if (execGrade < 1)
-        throw Form::GradeTooHighException();
+		throw Form::GradeTooHighException();
     if (execGrade > 150)
         throw Form::GradeTooLowException();
     return ;

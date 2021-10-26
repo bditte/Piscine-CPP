@@ -31,7 +31,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 	try
 	{
 		this->Form::canBeExecuted(executor);
-		outfile.open(this->target + "_shrubbery");
+		outfile.open((this->target + "_shrubbery").c_str());
 		draw_tree(outfile);
 		outfile.close();
 	}

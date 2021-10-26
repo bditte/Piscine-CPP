@@ -15,13 +15,25 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main ()
 {
-
+	Intern someRandomIntern;
+	Form* rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	Form* badform;
+	badform = someRandomIntern.makeForm("random form", "There");
     Bureaucrat BigBoss("BigBoss", 1);
 	Bureaucrat LowestEmployee("LowestEmployee", 150);
-	Bureaucrat MiddleEmployee("MiddleEmployee", 40);
+
+	BigBoss.executeForm(*rrf);
+	LowestEmployee.signForm(*rrf);
+	BigBoss.signForm(*rrf);
+	BigBoss.executeForm(*rrf);
+
+	delete rrf;
+/*	Bureaucrat MiddleEmployee("MiddleEmployee", 40);
 	Form	*b = new ShrubberyCreationForm("House");
 	Form	*c = new RobotomyRequestForm("Car");
 	Form	*d = new PresidentialPardonForm("Ford Prefect");
@@ -55,6 +67,6 @@ int main ()
 	MiddleEmployee.executeForm(*d);
 	delete b;
 	delete c;
-	delete d;
+	delete d;*/
     return (0);
 }

@@ -6,12 +6,25 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:31:43 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/21 13:17:51 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 12:02:15 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+void	Bureaucrat::executeForm(Form const& form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executs " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
 
 std::string const Bureaucrat::getName() const
 {

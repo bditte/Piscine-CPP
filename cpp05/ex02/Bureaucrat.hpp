@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:25:59 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/21 13:18:03 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 12:02:16 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Bureaucrat
     void    incrementGrade();
     void    decrementGrade();
 	void	signForm(Form& form) const;
+	void	executeForm(Form const& form) const;
 
     Bureaucrat& operator=(Bureaucrat const& rhs);
 

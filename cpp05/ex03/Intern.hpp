@@ -33,7 +33,7 @@ class Intern
 	private:
 
 	std::string names[3];
-	Form		(Form::*constructors[3])();
+	Form*		(*constructors[3])(std::string);
 };
 
 #endif

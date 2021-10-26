@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 12:32:14 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/21 13:42:52 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 10:38:55 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ class Form
     Form();
     Form(std::string const name, int signGrade, int execGrade);
     Form(Form const& src);
-    ~Form();
+    virtual ~Form();
 
 	std::string const	getName() const;
     int					getSignGrade() const;
 	int					getExecGrade() const;
 	bool				getSignature() const;
 	Form&				beSigned(Bureaucrat bureaucrat);
-	void				execute (Bureaucrat const & executor) const;
+	virtual void		execute (Bureaucrat const & executor) const = 0;
+	void				canBeExecuted(Bureaucrat const& executor) const;
 
     Form& operator=(Form const& rhs);
 
@@ -50,6 +51,14 @@ class Form
         virtual const char* what() const throw()
         {
             return ("Grade is too low to do this");
+        }
+    };
+
+	class FormNotSignedException: public std::exception
+    {
+        virtual const char* what() const throw()
+        {
+            return ("Form has to be signed to be executed");
         }
     };
 

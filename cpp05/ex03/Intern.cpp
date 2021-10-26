@@ -16,11 +16,35 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+Form* makeShrubbery(std::string target)
+{
+	return (new ShrubberyCreationForm(target));
+}
+
+Form* makeRobotomy(std::string target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+Form* makePresidential(std::string target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
 Form* Intern::makeForm(std::string type, std::string target)
 {
-	Form *res;
+	int	i = 0;
 
-	*res = new 
+	while (this->names[i].compare(type) && i < 3)
+		i++;
+	if (i == 3)
+	{
+		std::cout << type << ": Unknown form type." << std::endl;
+		return (NULL);
+	}
+	Form *res = this->constructors[i](target);
+	std::cout << "Intern creates " << type << std::endl;
+	return (res);
 }
 
 Intern::Intern()
@@ -28,8 +52,9 @@ Intern::Intern()
 	this->names[0] = "shrubbery creation";
 	this->names[1] = "robotomy request";
 	this->names[2] = "presidential pardon";
-	this->constructors[0] = &ShrubberyCreationForm::ShrubberyCreationForm;
-
+	this->constructors[0] = makeShrubbery;
+	this->constructors[1] = makeRobotomy;
+	this->constructors[2] = makePresidential;
 	return ;
 }
 
