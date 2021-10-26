@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 10:38:30 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/22 11:24:44 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 11:42:29 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRYCREATIONFORM_HPP
-# define SHRUBERRYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 # include <iostream>
 # include <string.h>
 # include <exception>
 # include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm : public Form
 {
     public:
 
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(std::string const target);
-    ShrubberyCreationForm(ShrubberyCreationForm const& src);
-    ~ShrubberyCreationForm();
+    PresidentialPardonForm();
+    PresidentialPardonForm(std::string const target);
+    PresidentialPardonForm(PresidentialPardonForm const& src);
+    ~PresidentialPardonForm();
 
 	virtual void		execute (Bureaucrat const & executor) const;
 
-	ShrubberyCreationForm& operator=(ShrubberyCreationForm const& rhs);
+	PresidentialPardonForm& operator=(PresidentialPardonForm const& rhs);
 
     private:
 

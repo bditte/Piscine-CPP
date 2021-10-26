@@ -6,40 +6,55 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:25:51 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/21 13:18:34 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 12:33:00 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main ()
 {
 
-    Bureaucrat a("BigBoss", 1);
-    try
+    Bureaucrat BigBoss("BigBoss", 1);
+	Bureaucrat LowestEmployee("LowestEmployee", 150);
+	Bureaucrat MiddleEmployee("MiddleEmployee", 40);
+	Form	*b = new ShrubberyCreationForm("House");
+	Form	*c = new RobotomyRequestForm("Car");
+	Form	*d = new PresidentialPardonForm("Ford Prefect");
+
+	try
 	{
-		Form not_valid("not_valid", 20, 200);
+		MiddleEmployee.signForm(*b);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	Form	b("Contract", 20, 50);
-
-    std::cout << a << std::endl;
-    std::cout << b << std::endl << std::endl;
-
-	a.signForm(b);
-    std::cout << b << std::endl << std::endl;
-
-	Bureaucrat c("Intern", 100);
-	Form	   d("Bill", 50, 30);
-
-	std::cout << c << std::endl;
-    std::cout << d << std::endl << std::endl;
-
-	c.signForm(d);
-    std::cout << d << std::endl << std::endl;
+	MiddleEmployee.executeForm(*b);
+	try
+	{
+		MiddleEmployee.signForm(*c);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	MiddleEmployee.executeForm(*c);
+	try
+	{
+		MiddleEmployee.signForm(*d);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	MiddleEmployee.executeForm(*d);
+	delete b;
+	delete c;
+	delete d;
     return (0);
 }

@@ -6,11 +6,53 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 12:38:34 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/21 13:41:32 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/22 12:01:44 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
+
+void		Form::canBeExecuted(Bureaucrat const& executor) const
+{
+	if (this->getSignature())
+	{
+		if (executor.getGrade() > this->getExecGrade())
+		{
+			throw Form::GradeTooLowException();
+		}
+	}
+	else
+		throw Form::FormNotSignedException();
+}
+
+std::string const Form::getName() const
+{
+    return (this->name);
+}
+
+int Form::getSignGrade() const
+{
+    return (this->signGrade);
+}
+
+int Form::getExecGrade() const
+{
+    return (this->execGrade);
+}
+
+bool Form::getSignature() const
+{
+    return (this->is_signed);
+}
+
+Form& Form::beSigned(Bureaucrat bureaucrat)
+{
+	if (this->getSignGrade() < bureaucrat.getGrade())
+		throw Form::GradeTooLowException();
+	this->is_signed = true;
+	return (*this);
+}
 
 Form& Form::operator=(Form const& rhs)
 {
@@ -30,19 +72,28 @@ std::ostream& operator<<(std::ostream& o, Form const& rhs)
     return (o);
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const target): target(target), Form(target, 145, 137)
+Form::Form(std::string const name, int signGrade, int execGrade): name(name), signGrade(signGrade), execGrade(execGrade)
+{
+	this->is_signed = false;
+    if (signGrade < 1)
+        throw Form::GradeTooHighException();
+    if (signGrade > 150)
+        throw Form::GradeTooLowException();
+	if (execGrade < 1)
+        throw Form::GradeTooHighException();
+    if (execGrade > 150)
+        throw Form::GradeTooLowException();
+    return ;
+}
+
+Form::Form(): name("default"), signGrade(1), execGrade(1), is_signed(false)
 {
     return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(): target("default"), Form("default", 145, 137)
+Form::Form(Form const& src): name(src.getName()), signGrade(src.getSignGrade()), execGrade(src.getExecGrade())
 {
-    return ;
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm::ShrubberyCreationForm const& src):
-	target(src.target), Form(src)
-{
+    this->is_signed = src.getSignature();
     return ;
 }
 
