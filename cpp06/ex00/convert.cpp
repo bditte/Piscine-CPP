@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:43:26 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/27 14:38:10 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/27 17:42:26 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,46 @@ void convert_int(long double nbr)
         std::cout << res << std::endl;
     }
 }
-
-void convert_float(long double nbr)
+int is_infinite_float(long double nbr)
+{
+    if (nbr == INFINITY || nbr == - INFINITY || !(nbr == nbr))
+ 		return (1);
+    return (0);
+}
+void convert_float(long double nbr, int precision)
 {
     float   res;
 
-    res = static_cast<float>(nbr);
-    std::cout << "float: " << res << std::endl;
+	std::cout << "float: ";
+	if (is_infinite_float(nbr))
+	{
+		res = static_cast<float>(nbr);
+		std::cout <<  res << "f" << std::endl;
+	}
+	else if (nbr < -FLT_MAX || nbr > FLT_MAX)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		res = static_cast<float>(nbr);
+		std::cout << std::fixed << std::setprecision(precision) << res << "f" << std::endl;
+	}
+}
+
+void convert_double(long double nbr)
+{
+	double res;
+
+	std::cout << "double: ";
+	if (is_infinite_float(nbr))
+	{
+		res = static_cast<float>(nbr);
+		std::cout <<  res << std::endl;
+	}
+	else if (nbr < -DBL_MAX || nbr > DBL_MAX)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		res = static_cast<double>(nbr);
+		std::cout << res << std::endl;
+	}
 }
