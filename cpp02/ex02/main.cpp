@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 15:14:37 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/13 16:34:55 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/27 16:01:48 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 	
 	a = 5;
 	std::cout << "a = " << a <<std::endl;
-	std::cout << " b = " << b <<std::endl;
+	std::cout << "b = " << b <<std::endl;
 	std::cout << "a + b = " << a + b << std::endl;
 	std::cout << "a - b = " << a - b << std::endl;
 	std::cout << "a * b = " << a * b << std::endl;

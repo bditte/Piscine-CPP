@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:09:42 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/16 13:26:20 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 11:40:57 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,35 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->setHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	return ;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->setHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 	std::cout << "ScavTrap parameter constructor called" << std::endl;
+	return ;
+}
+
+
+ScavTrap& ScavTrap::operator=(ScavTrap& rhs)
+{
+	this->setName(rhs.getName());
+	this->setHitPoints(rhs.getHitPoints());
+	this->setEnergyPoints(rhs.getEnergyPoints());
+	this->setAttackDamage(rhs.getAttackDamage());
+	return (*this);
+}
+
+ScavTrap::ScavTrap(ScavTrap &src)
+{
+	*this = src;
 	return ;
 }
 
@@ -36,26 +52,18 @@ ScavTrap::~ScavTrap()
 	return ;
 }
 
-ScavTrap& ScavTrap::operator=(ScavTrap& rhs)
-{
-	this->_name = rhs._name;
-	this->_hitPoints = rhs._hitPoints;
-	this->_energyPoints = rhs._energyPoints;
-	this->_attackDamage = rhs._attackDamage;
-	return (*this);
-}
 
 void	ScavTrap::attack(std::string const& target)
 {
-	std::cout << "ScavTrap " << this->_name << " attacks " << target
-	<< " causing " << this->_attackDamage << " damages." << std::endl;
-	this->_energyPoints -= 1;
-	std::cout << "This cost 1 energy point. " << this->_name << " now has "
-	<< this->_energyPoints << " energy points" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target
+	<< " causing " << this->getAttackDamage() << " damages." << std::endl;
+	this->setEnergyPoints(this->getEnergyPoints() - 1);
+	std::cout << "This cost 1 energy point. " << this->getName() << " now has "
+	<< this->getEnergyPoints() << " energy points" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout << this->_name << " has entered Gate keeper mode." << std::endl;
+	std::cout << this->getName() << " has entered Gate keeper mode." << std::endl;
 	return ;
 }

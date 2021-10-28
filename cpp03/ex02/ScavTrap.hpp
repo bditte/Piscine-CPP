@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:05:14 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/16 11:40:58 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 11:40:15 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ScavTrap : public ClapTrap
 
 	ScavTrap();
 	ScavTrap(std::string name);
+	ScavTrap(ScavTrap &src);
 	~ScavTrap();
 
 	ScavTrap& operator=(ScavTrap &rhs);

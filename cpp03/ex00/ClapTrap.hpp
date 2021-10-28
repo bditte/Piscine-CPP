@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 15:02:14 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/15 15:19:27 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 11:14:03 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,18 @@ class ClapTrap
 
 	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const& src);
 	~ClapTrap();
+
+	std::string	getName() const;
+	unsigned int	getHitPoints() const;
+	unsigned int	getEnergyPoints() const;
+	unsigned int	getAttackDamage() const;
+
+	void	setName(std::string name);
+	void	setHitPoints(unsigned int amount);
+	void	setEnergyPoints(unsigned int amount);
+	void	setAttackDamage(unsigned int amount);
 
 	ClapTrap& operator=(ClapTrap const &rhs);
 

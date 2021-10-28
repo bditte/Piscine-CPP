@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 11:34:20 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/16 13:09:26 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 13:10:01 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 
 	DiamondTrap();
 	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap &src);
 	~DiamondTrap();
 
 	DiamondTrap& operator=(DiamondTrap &rhs);

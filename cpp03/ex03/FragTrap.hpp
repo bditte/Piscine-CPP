@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 11:05:46 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/16 12:22:46 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 12:38:35 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class FragTrap : public virtual ClapTrap
 
 	FragTrap();
 	FragTrap(std::string name);
+	FragTrap(FragTrap &src);
 	~FragTrap();
 
 	FragTrap& operator=(FragTrap& rhs);

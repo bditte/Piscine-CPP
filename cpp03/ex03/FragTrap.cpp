@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 11:06:08 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/16 11:15:13 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 11:43:43 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,21 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
+	return ;
+}
+
+FragTrap& FragTrap::operator=(FragTrap& rhs)
+{
+	this->setName(rhs.getName());
+	this->setHitPoints(rhs.getHitPoints());
+	this->setEnergyPoints(rhs.getEnergyPoints());
+	this->setAttackDamage(rhs.getAttackDamage());
+	return (*this);
+}
+
+FragTrap::FragTrap(FragTrap &src)
+{
+	*this = src;
 	return ;
 }
 
