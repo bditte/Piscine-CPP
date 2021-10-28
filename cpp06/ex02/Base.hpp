@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 18:08:49 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/27 18:59:42 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/28 09:51:45 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class A: public Base
 	public:
 
 	A();
-	virtual ~A();
 	std::string getType() const;
 
 	private:
@@ -40,7 +39,6 @@ class B: public Base
 	public:
 
 	B();
-	virtual ~B();
 	std::string getType() const;
 
 	private:
@@ -53,7 +51,6 @@ class C: public Base
 	public:
 
 	C();
-	virtual ~C();
 	std::string getType() const;
 
 	private:

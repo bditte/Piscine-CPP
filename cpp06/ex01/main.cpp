@@ -1,48 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 18:54:07 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/28 09:51:31 by bditte           ###   ########.fr       */
+/*   Created: 2021/10/27 17:47:45 by bditte            #+#    #+#             */
+/*   Updated: 2021/10/27 18:05:59 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "serialization.hpp"
 
-std::string A::getType() const
+uintptr_t	serialize(Data *ptr)
 {
-	return (this->type);
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-A::A(): type("A")
+Data	*deserialize(uintptr_t raw)
 {
-	return ;
+	return (reinterpret_cast<Data*>(raw));
 }
 
-std::string B::getType() const
+int	main()
 {
-	return (this->type);
-}
-
-B::B(): type("B")
-{
-	return ;
-}
-
-std::string C::getType() const
-{
-	return (this->type);
-}
-
-C::C(): type("C")
-{
-	return ;
-}
-
-Base::~Base()
-{
-	return ;
+	Data	data;
+	
+	std::cout << "adress before serialization : " << &data << std::endl;
+	std::cout << "adress after serialization : ";
+	std::cout << deserialize(serialize(&data)) << std::endl;
+	return (0);
 }

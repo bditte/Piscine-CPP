@@ -1,7 +1,6 @@
 NAME = a.out
 
-SRC =			main.cpp \
-				Base.cpp
+SRC =			main.cpp 
 
 SRCS =			$(addprefix $(DIR_SRCS), $(SRC))
 
