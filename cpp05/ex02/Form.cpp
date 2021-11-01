@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 12:38:34 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/22 12:01:44 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/31 14:08:47 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,12 @@ std::ostream& operator<<(std::ostream& o, Form const& rhs)
 Form::Form(std::string const name, int signGrade, int execGrade): name(name), signGrade(signGrade), execGrade(execGrade)
 {
 	this->is_signed = false;
-<<<<<<< HEAD
 	if (signGrade < 1)
 		throw Form::GradeTooHighException();
 	if (signGrade > 150)
 		throw Form::GradeTooLowException();
 	if (execGrade < 1)
 		throw Form::GradeTooHighException();
-=======
-    if (signGrade < 1)
-        throw Form::GradeTooHighException();
-    if (signGrade > 150)
-        throw Form::GradeTooLowException();
-	if (execGrade < 1)
-        throw Form::GradeTooHighException();
->>>>>>> f711f048f2ef22cd06d83eabdb560e20f1d91b03
     if (execGrade > 150)
         throw Form::GradeTooLowException();
     return ;

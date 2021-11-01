@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:36:03 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/22 12:33:31 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/31 14:08:49 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
 	try
 	{
 		this->Form::canBeExecuted(executor);
-<<<<<<< HEAD
 		outfile.open((this->target + "_shrubbery").c_str());
-=======
-		outfile.open(this->target + "_shrubbery");
->>>>>>> f711f048f2ef22cd06d83eabdb560e20f1d91b03
 		draw_tree(outfile);
 		outfile.close();
 	}

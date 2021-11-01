@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 11:25:51 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/22 12:33:00 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/31 14:08:21 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 
 int main ()
 {
-<<<<<<< HEAD
-=======
-
->>>>>>> f711f048f2ef22cd06d83eabdb560e20f1d91b03
     Bureaucrat BigBoss("BigBoss", 1);
 	Bureaucrat LowestEmployee("LowestEmployee", 150);
 	Bureaucrat MiddleEmployee("MiddleEmployee", 40);

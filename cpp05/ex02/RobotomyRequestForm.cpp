@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 13:36:03 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/22 12:32:50 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/31 14:08:50 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor) const
 		if (rand() % 2)
 			std::cout << this->target << " got robotized !" << std::endl;
 		else
-<<<<<<< HEAD
 			std::cout << this->target << " did not get robotized..." << std::endl;
-=======
-			std::cout << this->target << " did not got robotized..." << std::endl;
->>>>>>> f711f048f2ef22cd06d83eabdb560e20f1d91b03
 	}
 	catch (const Form::FormNotSignedException& e)
 	{
