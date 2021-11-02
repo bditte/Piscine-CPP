@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 15:31:16 by bditte            #+#    #+#             */
-/*   Updated: 2021/10/18 11:50:35 by bditte           ###   ########.fr       */
+/*   Updated: 2021/10/29 12:28:41 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int	main(void)
 	std::cout << std::endl << std::endl << "---- BEGINNING OF DESTRUCTORS ----" <<std::endl;
 	delete a;
 	delete b;
-	return (0);
 	return (0);
 }
