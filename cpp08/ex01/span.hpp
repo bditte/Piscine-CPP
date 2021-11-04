@@ -6,7 +6,7 @@
 /*   By: bditte <bditte@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:10:35 by bditte            #+#    #+#             */
-/*   Updated: 2021/11/03 17:22:04 by bditte           ###   ########.fr       */
+/*   Updated: 2021/11/04 12:19:45 by bditte           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <list>
 # include <iostream>
 # include <algorithm>
+# include <iterator>
 
 class Span
 {
@@ -27,6 +28,7 @@ class Span
 	~Span();
 
 	void	addNumber(int number);
+	void	addRange(std::list<int>::iterator first, std::list<int>::iterator last);
 
 	int		shortestSpan()	;
 	int		longestSpan()	const;
